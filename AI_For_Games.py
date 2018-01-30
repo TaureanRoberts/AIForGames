@@ -1,11 +1,8 @@
 class Vector2(object):
     def __init__(self, lhs, rhs):
-        self.xpos = xpos
-        self.ypos = ypos
-    def add(self, other, lhs, rhs):
-        self.xpos + xpos = xpos
-        self.ypos + ypos = ypos
+    def add(self, lhs, rhs):
+        return lhs + rhs
     def sub(self, lhs, rhs):
-        self.xpos - xpos = xpos
-        self.ypos - ypos = ypos
+        return lhs - rhs
     def scale(self, lhs, rhs):
+        return lhs * 2 and rhs * 2
