@@ -7,7 +7,7 @@ class Vector2(object):
         new_vect2 = Vector2(self.x_pos + other.x_pos, self.y_pos + other.y_pos)
         return new_vect2
     def __sub__(self, other):
-        new_vect2 = Vector2(self.x_pos - other.x_pos, self.y_pos - self.y_pos)
+        new_vect2 = Vector2(self.x_pos - other.x_pos, self.y_pos - other.y_pos)
         return new_vect2
     def __mul__(self, other):
         new_vect2 = Vector2(self.x_pos * other, self.y_pos *other)
@@ -23,5 +23,5 @@ class Vector2(object):
         return norm
     def dot(self, other):
         '''Dot operator overloader'''
-        spot = Vector2(self.x_pos * other.x_pos, self.y_pos * other.y_pos)
+        spot = 
         return spot
