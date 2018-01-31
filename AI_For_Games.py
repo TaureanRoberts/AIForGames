@@ -18,7 +18,7 @@ class Vector2(object):
         return magn
     def normalize(self):
         '''Normalizes the magnitude of the vector'''
-        mag = self.magnitude
+        mag = self.magnitude()
         norm = Vector2(self.x_pos / mag, self.y_pos / mag)
         return norm
     def dot(self, other):
