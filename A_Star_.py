@@ -6,3 +6,5 @@ class Node(object):
     def g_score(self, other):
         move = Vector2(self.movement + self.position, self.movement + self.position)
         return move
+    def h_score(self):
+        
