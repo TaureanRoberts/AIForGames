@@ -2,3 +2,4 @@
 from PassGen
 class RandPass:
     def GetLength():
+        

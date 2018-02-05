@@ -12,6 +12,10 @@ class Vector2(object):
     def __mul__(self, other):
         new_vect2 = Vector2(self.x_pos * other, self.y_pos *other)
         return new_vect2
+    def dot(self, other):
+        '''Dot operator overloader'''
+        spot = self.x_pos * other.x_pos + self.y_pos * other.y_pos
+        return spot
     def magnitude(self):
         '''Gets the magnitude of the vector'''
         magn = math.sqrt(self.x_pos * self.x_pos + self.y_pos * self.y_pos)
@@ -21,7 +25,3 @@ class Vector2(object):
         mag = self.magnitude()
         norm = Vector2(self.x_pos / mag, self.y_pos / mag)
         return norm
-    def dot(self, other):
-        '''Dot operator overloader'''
-        spot = 
-        return spot
