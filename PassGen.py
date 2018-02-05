@@ -1,5 +1,4 @@
 # Password Gen
-from PassGen
+from PassWords
 class RandPass:
-    def GetLength():
-        
+    def GetLength
