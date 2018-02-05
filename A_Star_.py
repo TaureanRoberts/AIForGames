@@ -4,5 +4,5 @@ class Node(object):
         self.position = pos
         self.movement = move
     def g_score(self, other):
-        move = Vector2(self.movement + self.position)
+        move = Vector2(self.movement + self.position, self.movement + self.position)
         return move
