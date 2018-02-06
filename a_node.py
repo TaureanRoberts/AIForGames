@@ -7,11 +7,16 @@ class Node(object):
         self.h_score = 0
         self.f_score = 0
         self.is_traversable = traverseable
+
     def calculate_g_score(self, nodes):
         self.position = nodes
+
 class Graph(object):
-    def __init__(self, node, xpos, ypos):
-        self.nodes = node
-        self.x_position = xpos
-        self.y_position = ypos
-    def first_node(self):
+    def __init__(self, dimension):
+        self.nodes = []
+        self.dimension = dimension
+
+    def make_nodes(self):
+        for i in range(0, self.dimension.x_pos):
+            for j in range(0, self.dimension.y_pos):
+                self.nodes.append(Node(Vector2(x_pos, y_pos)))
