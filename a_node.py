@@ -24,8 +24,3 @@ class Graph(object):
         for i in range(0, self.dimension.x_pos):
             for j in range(0, self.dimension.y_pos):
                 self.nodes.append(Node(Vector2(i, j), True))
-
-def main():
-    for i in range ()
-
-main()
