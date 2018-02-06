@@ -10,6 +10,10 @@ class Node(object):
 
     def calculate_g_score(self, nodes):
         self.position = nodes
+    
+
+    def node_parent(self, parents):
+        self.parent = parents
 
 class Graph(object):
     def __init__(self, dimension):
@@ -19,4 +23,9 @@ class Graph(object):
     def make_nodes(self):
         for i in range(0, self.dimension.x_pos):
             for j in range(0, self.dimension.y_pos):
-                self.nodes.append(Node(Vector2(x_pos, y_pos)))
+                self.nodes.append(Node(Vector2(i, j), True))
+
+def main():
+    for i in range ()
+
+main()
