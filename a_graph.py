@@ -4,5 +4,5 @@ class Graph(object):
         self.nodes = node
         self.x_position = xpos
         self.y_position = ypos
-    def graph_demensions(self, pos):
-        self.x_position = pos
+    def first_node(self):
+        
