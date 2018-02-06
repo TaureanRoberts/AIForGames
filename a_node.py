@@ -9,3 +9,9 @@ class Node(object):
         self.is_traversable = traverseable
     def calculate_g_score(self, nodes):
         self.position = nodes
+class Graph(object):
+    def __init__(self, node, xpos, ypos):
+        self.nodes = node
+        self.x_position = xpos
+        self.y_position = ypos
+    def first_node(self):
