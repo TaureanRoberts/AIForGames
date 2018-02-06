@@ -1,4 +1,4 @@
 # Password Gen
-from PassWords
+from PassWords.txt
 class RandPass:
     def GetLength

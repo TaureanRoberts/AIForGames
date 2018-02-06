@@ -1,5 +1,5 @@
 import pygame
-from AI_For_Games import Vector2
+from vector2_class import Vector2
 def main():
     pygame.init()
 

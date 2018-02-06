@@ -1,4 +1,4 @@
-from AI_For_Games.py import Vector2
+from vector2_class import Vector2
 class Node(object):
     def __init__(self, pos, traverseable):
         self.position = pos
@@ -8,3 +8,4 @@ class Node(object):
         self.f_score = 0
         self.is_traversable = traverseable
     def calculate_g_score(self, nodes):
+        self.position = nodes
