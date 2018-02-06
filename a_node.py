@@ -10,7 +10,6 @@ class Node(object):
 
     def calculate_g_score(self, nodes):
         self.position = nodes
-    
 
     def node_parent(self, parents):
         self.parent = parents
