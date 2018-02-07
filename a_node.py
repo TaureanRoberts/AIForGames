@@ -24,4 +24,5 @@ class Graph(object):
             for j in range(0, self.dimension.y_pos):
                 self.nodes.append(Node(Vector2(i, j), True))
 
-test = 
+    def find_neighbors(self):
+        current
