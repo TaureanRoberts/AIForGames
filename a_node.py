@@ -14,14 +14,9 @@ class Node(object):
             self.g_score = nodes.g_score + 10
         else:
             self.g_score = nodes.g_score + 14
-
-    def find_neighbor(self, neighbors):
-        if self.position 
         
     def node_parent(self, a_parent):
         self.parent = a_parent
-        #gives the current node its parents
-        #if self.position == a_parent.position.x_pos or a_parent.position.y_pos
 
 class Graph(object):
     def __init__(self, dimension):
@@ -30,9 +25,12 @@ class Graph(object):
 
     def make_nodes(self):
         #Makes the nodes
-        for i in range(0, self.dimension.x_pos):
+        for i in range(self.dimension.x_pos, 0):
             for j in range(0, self.dimension.y_pos):
                 self.nodes.append(Node(Vector2(i, j), True))
+
+    def find_neighbors(self):
+        
 
 
 new_node = Node(Vector2(0, 2), True)
