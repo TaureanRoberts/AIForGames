@@ -25,12 +25,13 @@ class Graph(object):
 
     def make_nodes(self):
         #Makes the nodes
-        for i in range(self.dimension.x_pos, 0):
+        for i in range(0, self.dimension.x_pos):
             for j in range(0, self.dimension.y_pos):
                 self.nodes.append(Node(Vector2(i, j), True))
 
-    def find_neighbors(self):
-        
+    def find_neighbors(self, neighbor):
+        #Finds the neighbors of the current node.
+        for i in range(0, self.nodes)
 
 
 new_node = Node(Vector2(0, 2), True)
