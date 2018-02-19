@@ -9,15 +9,14 @@ class Node(object):
         self.is_traversable = True
 
     def calculate_g_score(self, nodes):
-        if self.position.x_pos = nodes.position.x_pos
+        if self.position.x_pos = nodes.position.x_pos:
             self.g_score = nodes.g_score + 10
-        elif self.position.y_pos = nodes.position.y_pos
+        elif self.position.y_pos = nodes.position.y_pos:
             self.g_score = nodes.g_score + 10
         else
             self.g_score = nodes.g_score + 14
 
     def node_parent(self, parents):
-        
         self.parent = parents
 
 class Graph(object):
