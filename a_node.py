@@ -19,9 +19,10 @@ class Node(object):
         self.parent = a_parent
 
 class Graph(object):
-    def __init__(self, dimension):
+    def __init__(self, dimensions):
+        '''dimension is the n*n (heightxwidth) of grid ex: Graph(10) will make a 10x10 graph'''
         self.nodes = []
-        self.dimension = dimension
+        self.dimension = dimensions
 
     def make_nodes(self):
         #Makes the nodes
@@ -29,10 +30,15 @@ class Graph(object):
             for j in range(0, self.dimension.y_pos):
                 self.nodes.append(Node(Vector2(i, j), True))
 
-    def find_neighbors(self, neighbor):
-        #Finds the neighbors of the current node.
-        if self.nodes == neighbor.nodes
-            
+def get_neighbors(self, cell, graph):
+    self.id = cell
+    self.dims = graph
+
+def main():
+    g = Graph(4)
+    n = Node(5)
+    nays = get_neighbors(n, g)
+    print nays
 
 
 new_node = Node(Vector2(0, 2), True)
