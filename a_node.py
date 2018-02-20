@@ -31,7 +31,8 @@ class Graph(object):
 
     def find_neighbors(self, neighbor):
         #Finds the neighbors of the current node.
-        for i in range(0, self.nodes)
+        if self.nodes == neighbor.nodes
+            
 
 
 new_node = Node(Vector2(0, 2), True)
