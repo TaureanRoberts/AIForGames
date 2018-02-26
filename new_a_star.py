@@ -8,10 +8,11 @@ class Graph(object):
         self.nodes = []
         self.dimension = nodes
 
-    def make_nodes(self, _nodes):
+    def make_nodes(self):
         '''Make a search space for the nodes'''
-        for i in range(0, self.dimension, +1):
-            self.nodes.append(i)
+        for i in range(0, self.dimension):
+            _nodes = Node(i)
+            self.nodes.append(_nodes)
 
 g = Graph([4])
 new_g = g.make_nodes
