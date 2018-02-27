@@ -8,6 +8,7 @@ class Graph(object):
     def __init__(self, dims):
         self.nodes = []
         self.dimension = dims
+        self.g_score = 0
 
     def make_nodes(self):
         '''Make a search space for the nodes'''
@@ -18,16 +19,19 @@ class Graph(object):
                 guid = guid + 1
                 self.nodes.append(_node)
 
-    def find_neighbors(self):
+    def find_neighbors(self, guid):
         '''Finds nodes that neighbor the current node'''
-        guid = Graph(Vector2(4, 4))
-        top = guid - self.dimension #Top Node
-        bot = guid + self.dimension #Bottom Node
+        top = guid - self.dimension.x_pos #Top Node
+        bot = guid + self.dimension.x_pos #Bottom Node
         left = guid - 1 #Left Node
         right = guid + 1 #Right Node
-        total_positions = ([top, bot, left, right])
-        self.nodes.append(total_positions)
+        topl = top - 1
+        topr = top + 1
+        botl = bot - 1
+        botr = bot + 1
+        total_positions = ([top, bot, left, right, topl, topr, botl, botr])
+        return total_positions
 
-g = Graph(Vector2(4, 4))
-pop_g = g.find_neighbors()
-
+g = Graph(Vector2(4, 4)) #Graph range size
+make_g = g.find_neighbors(10)
+print make_g
