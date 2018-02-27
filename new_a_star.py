@@ -11,26 +11,23 @@ class Graph(object):
 
     def make_nodes(self):
         '''Make a search space for the nodes'''
-        id = 0
-        for i in range(0, self.dimension.x_pos):
-            for j in range(0, self.dimension.y_pos):
-                _node = Node(Vector2(i, j), id)
-                id = id + 1
+        guid = 0
+        for i in range(0, self.dimension.y_pos):
+            for j in range(0, self.dimension.x_pos):
+                _node = Node(Vector2(i, j), guid)
+                guid = guid + 1
                 self.nodes.append(_node)
 
     def find_neighbors(self):
         '''Finds nodes that neighbor the current node'''
-        top = self.nodes - self.dimension.x_pos #Top Node
-        bot = self.nodes + self.dimension.x_pos #Bottom Node
-        left = self.nodes - 1 #Left Node
-        right = self.nodes + 1 #Right Node
-        topl = top - 1 #TopLeft Node
-        topr = top + 1 #TopRight Node
-        botl = bot - 1 #BottomLeft Node
-        botr = bot + 1 #BottomRight Node
-        total_positions = [top, bot, left, right, topl, topr, botl, botr]
+        guid = Graph(Vector2(4, 4))
+        top = guid - self.dimension #Top Node
+        bot = guid + self.dimension #Bottom Node
+        left = guid - 1 #Left Node
+        right = guid + 1 #Right Node
+        total_positions = ([top, bot, left, right])
         self.nodes.append(total_positions)
 
 g = Graph(Vector2(4, 4))
-new_g = g.make_nodes()
-print new_g
+pop_g = g.find_neighbors()
+
