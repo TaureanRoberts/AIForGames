@@ -11,9 +11,11 @@ class Graph(object):
 
     def make_nodes(self):
         '''Make a search space for the nodes'''
+        id = 0
         for i in range(0, self.dimension.x_pos):
             for j in range(0, self.dimension.y_pos):
-                _node = Node(Vector2(i, j), +1)
+                _node = Node(Vector2(i, j), id)
+                id = id + 1
                 self.nodes.append(_node)
 
     def find_neighbors(self):
