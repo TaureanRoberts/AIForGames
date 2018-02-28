@@ -15,7 +15,7 @@ class Graph(object):
                 self.nodes.append(_node)
 
     def find_neighbors(self, guid):
-        '''Finds nodes that neighbor the current node'''    
+        '''Finds nodes that neighbor the current node'''
         top = guid - self.dimension.x_pos  # Top Node
         bot = guid + self.dimension.x_pos  # Bottom Node
         left = guid - 1  # Left Node
@@ -33,5 +33,4 @@ class Graph(object):
 
 graph_size = Graph(Vector2(4, 4))
 graph_size.make_nodes()
-new_g = graph_size.find_neighbors(5)
-print new_g
+new_graph = 
