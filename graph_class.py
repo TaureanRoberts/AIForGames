@@ -30,7 +30,3 @@ class Graph(object):
             if total_pos.__contains__(node.guid):
                 neighbors.append(node)
         return neighbors
-
-get_g = Node(Vector2(4, 4), 5)
-get_g.calc_g_score(Vector2(1, 1))
-

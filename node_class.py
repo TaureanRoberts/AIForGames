@@ -8,11 +8,11 @@ class Node(object):
         self.f_score = 0
         self.parent = None
 
-    def calc_g_score(self, node):
-        if self.position.x_pos == node.position.x_pos or self.position.y_pos == node.position.y_pos:
-            self.g_score = node.g_score + 10
+    def calc_g_score(self, node_):
+        if self.position.x_pos == node_.position.x_pos or self.position.y_pos == node_.position.y_pos:
+            self.g_score = node_.g_score + 10
         else:
-            self.g_score = node.g_score + 14
+            self.g_score = node_.g_score + 14
 
     def calc_h_score(self, node):
         get_hscore = ((self.position.x_pos - node.position.x_pos) * (self.position.y_pos - node.position.y_pos)) * 10
