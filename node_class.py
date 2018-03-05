@@ -12,7 +12,7 @@ class Node(object):
         else:
             self.g_score = node.g_score + 14
 
-    def is_parented(self, node):
+    def node_parent(self, node):
         '''Checks the nodes parents and can trace node to start'''
         self.parent = node
         return self.parent
