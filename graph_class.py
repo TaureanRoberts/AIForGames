@@ -30,7 +30,3 @@ class Graph(object):
             if total_pos.__contains__(node.guid):
                 neighbors.append(node)
         return neighbors
-
-graph_size = Graph(Vector2(4, 4))
-graph_size.make_nodes()
-new_graph = 
