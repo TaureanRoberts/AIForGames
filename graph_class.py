@@ -31,8 +31,6 @@ class Graph(object):
                 neighbors.append(node)
         return neighbors
 
-set_graph = Graph(Vector2(4, 4))
-set_graph.make_nodes()
-get_score = Node(Vector2(1, 1), set_graph)
-get_score.calc_g_score(5)
-print get_score
+get_g = Node(Vector2(4, 4), 5)
+get_g.calc_g_score(Vector2(1, 1))
+
