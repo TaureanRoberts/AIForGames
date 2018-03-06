@@ -15,14 +15,10 @@ class Node(object):
             self.g_score = node_.g_score + 14
 
     def calc_h_score(self, node):
-        get_hscore = ((self.position.x_pos - node.position.x_pos) * (self.position.y_pos - node.position.y_pos)) * 10
-        return get_hscore
+        self.h_score = ((self.position.x_pos - node.position.x_pos) + (self.position.y_pos - node.position.y_pos)) * 10
 
     def calc_f_score(self):
-        for i in range(0, self.position.x_pos):
-            for j in range(0, self.position.y_pos):
-                get_fscore = self.calc_g_score(Vector2(i, j)) + self.calc_h_score(Vector2(i, j))
-                return get_fscore
+        self.f_score = self.calc_g_score + self.calc_h_score
 
     def node_parent(self, node):
         '''Checks the nodes parents and can trace node to start'''
