@@ -18,12 +18,10 @@ def algorithm(start_node, goal_node, searchspace):
         closed_list.append(current_node)
         # Extra: if the closed node is in the closed list then break
         if closed_list.__contains__(current_node):
-            for i in goal_node:
-                for j in goal_node:
-                    get_goal = current_node
-                    closed_list.append(get_goal)
-                    current = Node(Vector2(i, j), current_node)
-                    current.get_parent(get_goal)
+            #Trace current_node parents to the starting node
+            for i in searchspace:
+                current_parent = 
+
         # 2.3 Find the neighbors of the current node and put them in the open list
         # 2.4 Loop through all the neighbors of the current node
             # 2.4.1 If not traversable or in the closed list
