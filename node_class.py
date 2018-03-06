@@ -7,6 +7,7 @@ class Node(object):
         self.h_score = 0
         self.f_score = 0
         self.parent = None
+        self.traversable = True
 
     def calc_g_score(self, node_):
         if self.position.x_pos == node_.position.x_pos or self.position.y_pos == node_.position.y_pos:
@@ -20,7 +21,13 @@ class Node(object):
     def calc_f_score(self):
         self.f_score = self.calc_g_score + self.calc_h_score
 
-    def node_parent(self, node):
+    def is_traversable(self, traverse):
+        if self.traversable == traverse:
+            return True
+        else:
+            return False
+
+    def get_parent(self, node):
         '''Checks the nodes parents and can trace node to start'''
         self.parent = node
         return self.parent
