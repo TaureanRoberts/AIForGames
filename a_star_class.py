@@ -17,12 +17,18 @@ def algorithm(start_node, goal_node, searchspace):
         # 2.2 Add the current node to the closed list
         closed_list.append(current_node)
         # Extra: if the closed node is in the closed list then break
-        if closed_list.__contains__(current_node):
-            for i in range(closed_list):
-                
+        if closed_list.__contains__(goal_node):
+            current = goal_node
+            path = []
+            while current is not None:
+                path.append(current)
+                current = current.parent
         # 2.3 Find the neighbors of the current node and put them in the open list
-        # 2.4 Loop through all the neighbors of the current node
+        nays = Graph.find_neighbors(current_node.guid)
+        # 2.4 Loop through all the neighbors of the current Node
+        for nodes in nays:
             # 2.4.1 If not traversable or in the closed list
+            if nays not in closed_list:
                 # Ignore it
             # 2.4.2 If not in the open list
                 # add to the open list and calc h, g, f scores

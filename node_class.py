@@ -21,13 +21,7 @@ class Node(object):
     def calc_f_score(self):
         self.f_score = self.calc_g_score + self.calc_h_score
 
-    def is_traversable(self, traverse):
-        if self.traversable == traverse:
-            return True
-        else:
-            return False
-
-    def get_parent(self, node):
+    def set_parent(self, node):
         '''Checks the nodes parents and can trace node to start'''
         self.parent = node
         return self.parent
