@@ -14,12 +14,12 @@ class Graph(object):
                 id = id + 1
                 self.nodes.append(_node)
 
-    def find_neighbors(self, guid):
+    def find_neighbors(self, guid_):
         '''Finds the neighbors by getting their guid to give position'''
-        top = guid - self.dimension.x_pos  # Top Node
-        bot = guid + self.dimension.x_pos  # Bottom Node
-        left = guid - 1  # Left Node
-        right = guid + 1  # Right Node
+        top = guid_ - self.dimension.x_pos  # Top Node
+        bot = guid_ + self.dimension.x_pos  # Bottom Node
+        left = guid_ - 1  # Left Node
+        right = guid_ + 1  # Right Node
         topl = top - 1  # Top Left node
         topr = top + 1  # Top Right node
         botl = bot - 1  # Bottom Left node
@@ -27,6 +27,6 @@ class Graph(object):
         total_pos = [top, bot, left, right, topl, topr, botl, botr]
         neighbors = []
         for node in self.nodes:
-            if total_pos.__contains__(node.guid):
+            if total_pos.__contains__(node.guid_):
                 neighbors.append(node)
         return neighbors

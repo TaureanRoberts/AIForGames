@@ -2,6 +2,7 @@ from node_class import Node
 from vector2_class import Vector2
 from graph_class import Graph
 
+
 def algorithm(start_node, goal_node, searchspace):
     open_list = []
     closed_list = []
@@ -24,13 +25,22 @@ def algorithm(start_node, goal_node, searchspace):
                 path.append(current)
                 current = current.parent
         # 2.3 Find the neighbors of the current node and put them in the open list
-        nays = Graph.find_neighbors(current_node.guid)
+        nays = Graph.find_neighbors(current_node.guid_) #throws error E1120 for unknown reason
         # 2.4 Loop through all the neighbors of the current Node
         for nodes in nays:
             # 2.4.1 If not traversable or in the closed list
-            if nays not in closed_list:
+            if closed_list.__contains__(nodes):
                 # Ignore it
+                pass
             # 2.4.2 If not in the open list
+            elif nodes != open_list:
                 # add to the open list and calc h, g, f scores
+                open_list.append(nodes)
             # 2.4.3 If it is in the open list
+            elif open_list.__contains__(nodes):
                 # check if better path
+                if open_list.sort(key=lambda node: node.f_score): #Sorts the fscores of all the nodes
+                    nodes = open_list[0] #The first node in the list is the new lowest fscore in the open list
+                    open_list.remove(nodes) #Removes from the open list
+                    closed_list.append(nodes) #Takes the node and put it in the closed list
+
