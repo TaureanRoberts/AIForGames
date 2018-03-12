@@ -26,10 +26,11 @@ def algorithm(start_node, goal_node, searchspace):
                 current = current.parent #current gets assigned the
             return path
         # 2.3 Find the neighbors of the current node and put them in the open list
-        nays = Graph.find_neighbors(current_node.guid)
-        gscore = Node.calc_g_score(current_node.node_)
-        hscore = Node.calc_h_score(current_node.node)
-        tentative = gscore + hscore
+        nays = Graph.find_neighbors(current_node.guid) #Finds the neighbors of the current node
+        gscore = Node.calc_g_score(current_node.node) #Enables gscore to be called from Node class
+        hscore = Node.calc_h_score(current_node.node) #Enables hscore to be called from Node class
+        fscore = Node.calc_f_score(current_node) #Enables fscore to be called from Node class
+        score_list = [gscore, hscore, fscore] #Places g, h, f scores in a list to be combined
         # 2.4 Loop through all the neighbors of the current Node
         for nodes in nays:
             # 2.4.1 If not traversable or in the closed list
@@ -39,8 +40,8 @@ def algorithm(start_node, goal_node, searchspace):
             # 2.4.2 If not in the open list
             if nodes not in open_list:
                 # add to the open list and calc h, g, f scores
-                open_list.append(nodes)
+                open_list.append(nodes, score_list)
             # 2.4.3 If it is in the open list
             if open_list.__contains__(nodes): #Use Tentative G
                 # check if better path
-                if current_node < 
+                if 
