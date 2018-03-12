@@ -1,4 +1,5 @@
 from vector2_class import Vector2
+import math
 class Node(object):
     def __init__(self, pos, _guid):
         self.guid = _guid
@@ -16,7 +17,7 @@ class Node(object):
             self.g_score = node.g_score + 14
 
     def calc_h_score(self, node):
-        self.h_score = ((self.position.x_pos - node.position.x_pos) + (self.position.y_pos - node.position.y_pos)) * 10
+        self.h_score = (abs(self.position.x_pos - node.position.x_pos) + abs(self.position.y_pos - node.position.y_pos)) * 10
 
     def calc_f_score(self):
         self.f_score = self.calc_g_score + self.calc_h_score
