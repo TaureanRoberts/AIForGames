@@ -45,6 +45,12 @@ def algorithm(start_node, goal_node, searchspace):
 def main():
     grid = Graph(Vector2(7, 7))
     grid.make_nodes()
+    walls = [23, 24, 25]
+    w = Node(w).can_traverse
+    if grid == walls:
+        return True
+    else:
+        return False
     s = grid.nodes[10]
     g = grid.nodes[38]
     p = algorithm(s, g, grid)

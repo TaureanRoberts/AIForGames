@@ -8,7 +8,7 @@ class Node(object):
         self.h_score = 0
         self.f_score = 0
         self.parent = None
-        self.traversable = True
+        self.can_traverse = True
 
     def calc_g_score(self, node):
         '''Calculates the g_score of the nodes in the graph and does tentative_g'''
