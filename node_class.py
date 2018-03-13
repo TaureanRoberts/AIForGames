@@ -11,10 +11,18 @@ class Node(object):
         self.traversable = True
 
     def calc_g_score(self, node):
+        '''Calculates the g_score of the nodes in the graph'''
+        tentative_g = self.g_score
+        if self.position.x_pos == node.position.x_pos and self.position.y_pos == node.position.y_pos:
+            return
         if self.position.x_pos == node.position.x_pos or self.position.y_pos == node.position.y_pos:
-            self.g_score = node.g_score + 10
+            tentative_g = node.g_score + 10
         else:
-            self.g_score = node.g_score + 14
+            tentative_g = node.g_score + 14
+        if node.parent != None:
+            if tentative_g < self.g_score:
+                self.g_score = tentative_g
+                self.set_parent
 
     def calc_h_score(self, node):
         self.h_score = (abs(self.position.x_pos - node.position.x_pos) + abs(self.position.y_pos - node.position.y_pos)) * 10

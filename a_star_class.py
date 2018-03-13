@@ -1,6 +1,7 @@
 from node_class import Node
 from vector2_class import Vector2
 from graph_class import Graph
+import math
 
 def algorithm(start_node, goal_node, searchspace):
     open_list = []
@@ -42,9 +43,10 @@ def algorithm(start_node, goal_node, searchspace):
             # 2.4.3 If it is in the open list
             if open_list.__contains__(node): #Use Tentative G
                 # check if better path
-                g = node
-                tentative_g = current_node.g + 10 # horizontal and vertical
-                tentative_g = current_node.g + 14 # diagnal
+                #calculate a Tentative
+                tentative_g = 0
+                tentative_g == current_node + 10
+                tentative_g == current_node + 14
                 if tentative_g < g:
                     g = tentative_g
-                    parent = current_node.parent
+                    Node.set_parent = current_node.g
