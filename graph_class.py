@@ -20,13 +20,30 @@ class Graph(object):
         bot = guid + self.dimension.x_pos  # Bottom Node
         left = guid - 1  # Left Node
         right = guid + 1  # Right Node
-        topl = top - 1  # Top Left node
-        topr = top + 1  # Top Right node
-        botl = bot - 1  # Bottom Left node
-        botr = bot + 1  # Bottom Right node
+        topl = top + 1  # Top Left node
+        topr = top - 1  # Top Right node
+        botl = bot + 1  # Bottom Left node
+        botr = bot - 1  # Bottom Right node
         total_pos = [top, bot, left, right, topl, topr, botl, botr]
         neighbors = []
         for node in self.nodes:
             if total_pos.__contains__(node.guid):
                 neighbors.append(node)
+        return neighbors
+
+    def find_neighbors_with_position(self, node):
+        positions = []
+        positions.append(node.position + Vector2(1, 0)) #right
+        positions.append(node.position + Vector2(-1, 0)) #left
+        positions.append(node.position + Vector2(0, 1)) #top
+        positions.append(node.position + Vector2(0, -1)) #bot
+        positions.append(node.position + Vector2(1, 1)) #top_right
+        positions.append(node.position + Vector2(-1, 1)) #top_left
+        positions.append(node.position + Vector2(1, -1)) #bot_right
+        positions.append(node.position + Vector2(-1, -1)) #bot_left
+        neighbors = []
+        for pos in positions:
+            for node in self.nodes:
+                if node.position == pos:
+                    neighbors.append(node)
         return neighbors

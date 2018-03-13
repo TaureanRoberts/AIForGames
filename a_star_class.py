@@ -26,7 +26,7 @@ def algorithm(start_node, goal_node, searchspace):
                 current = current.parent #current gets assigned the
             return path
         # 2.3 Find the neighbors of the current node and put them in the open list
-        nays = Graph.find_neighbors(current_node.guid) #Finds the neighbors of the current node
+        nays = searchspace.find_neighbors_with_position(current_node) #Finds the neighbors of the current node
         # 2.4 Loop through all the neighbors of the current Node
         for node in nays:
             # 2.4.1 If not traversable or in the closed list
@@ -37,16 +37,18 @@ def algorithm(start_node, goal_node, searchspace):
             if node not in open_list:
                 # add to the open list and calc h, g, f scores
                 open_list.append(node)
-                node.calc_g_score(current_node)
-                node.calc_h_score(goal_node)
-                node.calc_f_score()
+            node.calc_g_score(current_node)
+            node.calc_h_score(goal_node)
+            node.calc_f_score()
             # 2.4.3 If it is in the open list
-            if open_list.__contains__(node): #Use Tentative G
-                # check if better path
-                #calculate a Tentative
-                tentative_g = 0
-                tentative_g == current_node + 10
-                tentative_g == current_node + 14
-                if tentative_g < g:
-                    g = tentative_g
-                    Node.set_parent = current_node.g
+
+def main():
+    grid = Graph(Vector2(7, 7))
+    grid.make_nodes()
+    s = grid.nodes[10]
+    g = grid.nodes[38]
+    p = algorithm(s, g, grid)
+    a = 0
+
+main()
+
