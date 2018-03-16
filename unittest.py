@@ -181,5 +181,6 @@ def test_function(func):
 def main():
     '''the main'''
     test_function(algorithm)
+    #get_algorithm = test_function(algorithm)
 
 main()

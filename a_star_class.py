@@ -3,7 +3,7 @@ from vector2_class import Vector2
 from graph_class import Graph
 import math
 
-def algorithm(start_node, goal_node, searchspace):
+def algorithm(start_node, goal_node, graph):
     open_list = []
     closed_list = []
     current_node = start_node
@@ -26,7 +26,7 @@ def algorithm(start_node, goal_node, searchspace):
                 current = current.parent #current gets assigned the
             return path
         # 2.3 Find the neighbors of the current node and put them in the open list
-        nays = searchspace.find_neighbors_with_position(current_node) #Finds the neighbors of the current node
+        nays = graph.get_neighbors(current_node) #Finds the neighbors of the current node
         # 2.4 Loop through all the neighbors of the current Node
         for node in nays:
             # 2.4.1 If not traversable or in the closed list

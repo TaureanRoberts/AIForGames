@@ -31,19 +31,19 @@ class Graph(object):
                 neighbors.append(node)
         return neighbors
 
-    def find_neighbors_with_position(self, node):
+    def get_neighbors(self, graph):
         positions = []
-        positions.append(node.position + Vector2(1, 0)) #right
-        positions.append(node.position + Vector2(-1, 0)) #left
-        positions.append(node.position + Vector2(0, 1)) #top
-        positions.append(node.position + Vector2(0, -1)) #bot
-        positions.append(node.position + Vector2(1, 1)) #top_right
-        positions.append(node.position + Vector2(-1, 1)) #top_left
-        positions.append(node.position + Vector2(1, -1)) #bot_right
-        positions.append(node.position + Vector2(-1, -1)) #bot_left
+        positions.append(graph.position + Vector2(1, 0)) #right
+        positions.append(graph.position + Vector2(-1, 0)) #left
+        positions.append(graph.position + Vector2(0, 1)) #top
+        positions.append(graph.position + Vector2(0, -1)) #bot
+        positions.append(graph.position + Vector2(1, 1)) #top_right
+        positions.append(graph.position + Vector2(-1, 1)) #top_left
+        positions.append(graph.position + Vector2(1, -1)) #bot_right
+        positions.append(graph.position + Vector2(-1, -1)) #bot_left
         neighbors = []
         for pos in positions:
-            for node in self.nodes:
-                if node.position == pos:
-                    neighbors.append(node)
+            for graph in self.nodes:
+                if graph.position == pos:
+                    neighbors.append(graph)
         return neighbors
