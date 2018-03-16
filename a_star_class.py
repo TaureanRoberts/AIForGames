@@ -30,7 +30,7 @@ def algorithm(start_node, goal_node, searchspace):
         # 2.4 Loop through all the neighbors of the current Node
         for node in nays:
             # 2.4.1 If not traversable or in the closed list
-            if closed_list.__contains__(node):
+            if closed_list.__contains__(node) or node.can_traverse == False:
                 # Ignore it
                 continue
             # 2.4.2 If not in the open list
@@ -44,13 +44,10 @@ def algorithm(start_node, goal_node, searchspace):
 
 def main():
     grid = Graph(Vector2(7, 7))
-    grid.make_nodes()
-    walls = [23, 24, 25]
-    w = Node(w).can_traverse
-    if grid == walls:
-        return True
-    else:
-        return False
+    grid.make_nodes()    
+    grid.nodes[23].can_traverse = False
+    grid.nodes[24].can_traverse = False
+    grid.nodes[25].can_traverse = False
     s = grid.nodes[10]
     g = grid.nodes[38]
     p = algorithm(s, g, grid)
