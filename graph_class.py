@@ -32,6 +32,7 @@ class Graph(object):
         return neighbors
 
     def get_neighbors(self, graph):
+        '''Gets the position of neighbors by x and y positions'''
         positions = []
         positions.append(graph.position + Vector2(1, 0)) #right
         positions.append(graph.position + Vector2(-1, 0)) #left

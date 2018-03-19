@@ -44,7 +44,7 @@ def algorithm(start_node, goal_node, graph):
 
 def main():
     grid = Graph(Vector2(7, 7))
-    grid.make_nodes()    
+    grid.make_nodes()
     grid.nodes[23].can_traverse = False
     grid.nodes[24].can_traverse = False
     grid.nodes[25].can_traverse = False
@@ -54,4 +54,3 @@ def main():
     a = 0
 
 main()
-
