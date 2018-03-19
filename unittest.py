@@ -179,12 +179,13 @@ def test_function(func):
 
 
 
-    
+
 #DO NOT MODIFY
 
 def main():
     '''the main'''
-    test_function(algorithm)
+    g = 
+    test = algorithm(s, g, )
     #get_algorithm = test_function(algorithm)
 
 main()
