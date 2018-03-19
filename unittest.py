@@ -184,8 +184,9 @@ def test_function(func):
 
 def main():
     '''the main'''
-    #test_goal = shuffle_search_space()
-    testing = test_function(algorithm)
+    test_graph = shuffle_search_space()
+    test = algorithm(test_graph, test_graph, test_graph)
+    test_function(test)
     #get_algorithm = test_function(algorithm)
 
 main()
