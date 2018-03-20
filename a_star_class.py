@@ -3,7 +3,7 @@ from vector2_class import Vector2
 from graph_class import Graph
 import math
 
-def finding_neighbors(self, graph):
+def finding_neighbors(graph):
     '''Gets the position of neighbors by x and y positions'''
     positions = []
     positions.append(graph.position + Vector2(1, 0)) #right
