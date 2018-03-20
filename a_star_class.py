@@ -3,20 +3,23 @@ from vector2_class import Vector2
 from graph_class import Graph
 import math
 
-def finding_neighbors(pos):
-    '''Function that returns a list of neighbors'''
-    position = []
-    position.append(pos.position + Vector2(1, 0)) #right
-    position.append(pos.position + Vector2(-1, 0)) #left
-    position.append(pos.position + Vector2(0, 1)) #top
-    position.append(pos.position + Vector2(0, -1)) #bot
-    position.append(pos.position + Vector2(1, 1)) #top_right
-    position.append(pos.position + Vector2(-1, 1)) #top_left
-    position.append(pos.position + Vector2(1, -1)) #bot_right
-    position.append(pos.position + Vector2(-1, -1)) #bot_left
+def finding_neighbors(self, graph):
+    '''Gets the position of neighbors by x and y positions'''
+    positions = []
+    positions.append(graph.position + Vector2(1, 0)) #right
+    positions.append(graph.position + Vector2(-1, 0)) #left
+    positions.append(graph.position + Vector2(0, 1)) #top
+    positions.append(graph.position + Vector2(0, -1)) #bot
+    positions.append(graph.position + Vector2(1, 1)) #top_right
+    positions.append(graph.position + Vector2(-1, 1)) #top_left
+    positions.append(graph.position + Vector2(1, -1)) #bot_right
+    positions.append(graph.position + Vector2(-1, -1)) #bot_left
     neighbors = []
-    for pos in position:
-        
+    for pos in positions:
+        for graph in self.nodes:
+            if graph.position == pos:
+                neighbors.append(graph)
+    return neighbors
 
 def algorithm(start_node, goal_node, graph):
     open_list = []
