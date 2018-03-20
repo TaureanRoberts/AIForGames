@@ -16,10 +16,7 @@ def finding_neighbors(pos):
     position.append(pos.position + Vector2(-1, -1)) #bot_left
     neighbors = []
     for pos in position:
-        for graph in neighbors:
-            if graph.position == pos:
-                neighbors.append(graph)
-    return neighbors
+        
 
 def algorithm(start_node, goal_node, graph):
     open_list = []
