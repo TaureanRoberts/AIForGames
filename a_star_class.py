@@ -3,6 +3,24 @@ from vector2_class import Vector2
 from graph_class import Graph
 import math
 
+def finding_neighbors(pos):
+    '''Function that returns a list of neighbors'''
+    nays = []
+    nays.append(pos.nays + Vector2(1, 0)) #right
+    nays.append(pos.nays + Vector2(-1, 0)) #left
+    nays.append(pos.nays + Vector2(0, 1)) #top
+    nays.append(pos.nays + Vector2(0, -1)) #bot
+    nays.append(pos.nays + Vector2(1, 1)) #top_right
+    nays.append(pos.nays + Vector2(-1, 1)) #top_left
+    nays.append(pos.nays + Vector2(1, -1)) #bot_right
+    nays.append(pos.nays + Vector2(-1, -1)) #bot_left
+    neighbors = []
+    for pos in positions:
+        for graph in self.nodes:
+            if graph.position == pos:
+                neighbors.append(graph)
+    return neighbors
+
 def algorithm(start_node, goal_node, graph):
     open_list = []
     closed_list = []
@@ -52,5 +70,3 @@ def main():
     g = grid.nodes[38]
     p = algorithm(s, g, grid)
     a = 0
-
-main()
