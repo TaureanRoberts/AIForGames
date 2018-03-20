@@ -5,18 +5,18 @@ import math
 
 def finding_neighbors(pos):
     '''Function that returns a list of neighbors'''
-    nays = []
-    nays.append(pos.nays + Vector2(1, 0)) #right
-    nays.append(pos.nays + Vector2(-1, 0)) #left
-    nays.append(pos.nays + Vector2(0, 1)) #top
-    nays.append(pos.nays + Vector2(0, -1)) #bot
-    nays.append(pos.nays + Vector2(1, 1)) #top_right
-    nays.append(pos.nays + Vector2(-1, 1)) #top_left
-    nays.append(pos.nays + Vector2(1, -1)) #bot_right
-    nays.append(pos.nays + Vector2(-1, -1)) #bot_left
+    position = []
+    position.append(pos.position + Vector2(1, 0)) #right
+    position.append(pos.position + Vector2(-1, 0)) #left
+    position.append(pos.position + Vector2(0, 1)) #top
+    position.append(pos.position + Vector2(0, -1)) #bot
+    position.append(pos.position + Vector2(1, 1)) #top_right
+    position.append(pos.position + Vector2(-1, 1)) #top_left
+    position.append(pos.position + Vector2(1, -1)) #bot_right
+    position.append(pos.position + Vector2(-1, -1)) #bot_left
     neighbors = []
-    for pos in positions:
-        for graph in self.nodes:
+    for pos in position:
+        for graph in neighbors:
             if graph.position == pos:
                 neighbors.append(graph)
     return neighbors
@@ -44,7 +44,7 @@ def algorithm(start_node, goal_node, graph):
                 current = current.parent #current gets assigned the
             return path
         # 2.3 Find the neighbors of the current node and put them in the open list
-        nays = graph.get_neighbors(current_node) #Finds the neighbors of the current node
+        nays = finding_neighbors(current_node) #Finds the neighbors of the current node
         # 2.4 Loop through all the neighbors of the current Node
         for node in nays:
             # 2.4.1 If not traversable or in the closed list
@@ -70,3 +70,5 @@ def main():
     g = grid.nodes[38]
     p = algorithm(s, g, grid)
     a = 0
+
+main()
