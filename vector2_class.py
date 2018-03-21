@@ -36,6 +36,5 @@ class Vector2(object):
         return norm
 
     def __eq__(self, other):
-        '''Overloads the == operator'''
         return (self.x_pos == other.x_pos and self.y_pos == other.y_pos)
         
