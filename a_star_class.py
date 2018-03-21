@@ -71,4 +71,5 @@ def main():
     p = algorithm(s, g, grid)
     a = 0
 
+
 main()
