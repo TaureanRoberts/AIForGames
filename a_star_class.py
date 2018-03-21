@@ -14,8 +14,10 @@ def finding_neighbors(pos, searchspace):
     nays.append(pos + Vector2(0, -1)) # bot
     nays.append(pos + Vector2(1, -1)) # bot right
     neighbors = []
-    for neighbor_pos in nays:
-        if nays.__contains__(neighbor_pos.pos):
+    for nay in nays:
+        for nay_pos in neighbors:
+            if nay.pos ==
+    return neighbors
 
 def algorithm(start_node, goal_node, searchspace):
     open_list = []
@@ -40,7 +42,7 @@ def algorithm(start_node, goal_node, searchspace):
                 current = current.parent #current gets assigned the
             return path
         # 2.3 Find the neighbors of the current node and put them in the open list
-        nays = finding_neighbors(current_node.pos) #Finds the neighbors of the current node
+        nays = finding_neighbors(current_node.pos, searchspace) #Finds the neighbors of the current node
         # 2.4 Loop through all the neighbors of the current Node
         for node in nays:
             # 2.4.1 If not traversable or in the closed list
