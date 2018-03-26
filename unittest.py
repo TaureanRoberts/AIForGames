@@ -184,7 +184,6 @@ def test_function(func):
 
 def main():
     '''the main'''
-    rand_test = 
     test_function(algorithm)
 
 main()

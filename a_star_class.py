@@ -43,7 +43,7 @@ def algorithm(start_node, goal_node, searchspace):
                 current = current.parent #current gets assigned the
             return path
         # 2.3 Find the neighbors of the current node and put them in the open list
-        nays = finding_neighbors(current_node.position, searchspace) #Finds the neighbors of the current node
+        nays = finding_neighbors(current_node.position, searchspace)
         # 2.4 Loop through all the neighbors of the current Node
         for node in nays:
             # 2.4.1 If not traversable or in the closed list
