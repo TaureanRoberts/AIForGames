@@ -3,7 +3,7 @@ from vector2_class import Vector2
 from graph_class import Graph
 import math
 
-def finding_neighbors(pos, searchspace):
+def finding_neighbors(pos, search):
     nays = []
     nays.append(pos + Vector2(-1, 1)) #Top Left
     nays.append(pos + Vector2(0, 1)) #Top
@@ -16,7 +16,8 @@ def finding_neighbors(pos, searchspace):
     neighbors = []
     for nay in nays:
         for nay_pos in neighbors:
-            if nay.pos ==
+            if nay.pos == nay_pos:
+                neighbors.append(nay)
     return neighbors
 
 def algorithm(start_node, goal_node, searchspace):
@@ -42,7 +43,7 @@ def algorithm(start_node, goal_node, searchspace):
                 current = current.parent #current gets assigned the
             return path
         # 2.3 Find the neighbors of the current node and put them in the open list
-        nays = finding_neighbors(current_node.pos, searchspace) #Finds the neighbors of the current node
+        nays = finding_neighbors(current_node) #Finds the neighbors of the current node
         # 2.4 Loop through all the neighbors of the current Node
         for node in nays:
             # 2.4.1 If not traversable or in the closed list
