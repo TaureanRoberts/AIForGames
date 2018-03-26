@@ -7,11 +7,11 @@ class Graph(object):
 
     def make_nodes(self):
         '''Make a search space for the nodes'''
-        id = 0
+        guid = 0
         for i in range(0, self.dimension.x_pos):
             for j in range(0, self.dimension.y_pos):
-                _node = Node(Vector2(i, j), id)
-                id = id + 1
+                _node = Node(Vector2(i, j), guid)
+                guid = guid + 1
                 self.nodes.append(_node)
 
     def find_neighbors(self, guid):
@@ -32,16 +32,16 @@ class Graph(object):
         return neighbors
 
     def get_neighbors(self, graph):
-        '''Gets the position of neighbors by x and y positions'''
+        '''Gets the position of neighbor by x and y positions'''
         positions = []
         positions.append(graph.position + Vector2(1, 0)) #right
         positions.append(graph.position + Vector2(-1, 0)) #left
         positions.append(graph.position + Vector2(0, 1)) #top
         positions.append(graph.position + Vector2(0, -1)) #bot
-        positions.append(graph.position + Vector2(1, 1)) #top_right
-        positions.append(graph.position + Vector2(-1, 1)) #top_left
-        positions.append(graph.position + Vector2(1, -1)) #bot_right
-        positions.append(graph.position + Vector2(-1, -1)) #bot_left
+        positions.append(graph.position + Vector2(1, 1)) #top right
+        positions.append(graph.position + Vector2(-1, 1)) #top left
+        positions.append(graph.position + Vector2(1, -1)) #bot right
+        positions.append(graph.position + Vector2(-1, -1)) #bot left
         neighbors = []
         for pos in positions:
             for graph in self.nodes:

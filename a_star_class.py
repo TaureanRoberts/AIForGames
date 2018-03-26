@@ -3,25 +3,24 @@ from vector2_class import Vector2
 from graph_class import Graph
 import math
 
-def finding_neighbors(graph):
-    '''Gets the position of neighbors by x and y positions'''
-    positions = []
-    positions.append(graph.position + Vector2(1, 0)) #right
-    positions.append(graph.position + Vector2(-1, 0)) #left
-    positions.append(graph.position + Vector2(0, 1)) #top
-    positions.append(graph.position + Vector2(0, -1)) #bot
-    positions.append(graph.position + Vector2(1, 1)) #top_right
-    positions.append(graph.position + Vector2(-1, 1)) #top_left
-    positions.append(graph.position + Vector2(1, -1)) #bot_right
-    positions.append(graph.position + Vector2(-1, -1)) #bot_left
+def finding_neighbors(pos, search):
+    nays = []
+    nays.append(pos + Vector2(-1, 1)) #Top Left
+    nays.append(pos + Vector2(0, 1)) #Top
+    nays.append(pos + Vector2(1, 1)) #Top Right
+    nays.append(pos + Vector2(-1, 0)) #Left
+    nays.append(pos + Vector2(1, 0)) # Right
+    nays.append(pos + Vector2(-1, -1)) # Bot Left
+    nays.append(pos + Vector2(0, -1)) # bot
+    nays.append(pos + Vector2(1, -1)) # bot right
     neighbors = []
-    for pos in positions:
-        for graph in self.nodes:
-            if graph.position == pos:
-                neighbors.append(graph)
+    for nay in nays:
+        for node in search:
+            if node.position == nay:
+                neighbors.append(node)
     return neighbors
 
-def algorithm(start_node, goal_node, graph):
+def algorithm(start_node, goal_node, searchspace):
     open_list = []
     closed_list = []
     current_node = start_node
@@ -38,26 +37,26 @@ def algorithm(start_node, goal_node, graph):
         # Extra: if the closed node is in the closed list then break
         if closed_list.__contains__(goal_node):
             current = goal_node
-            path = [] #you need to return path at some point
+            path = []
             while current is not None:
                 path.append(current) #appends current to the path
                 current = current.parent #current gets assigned the
             return path
         # 2.3 Find the neighbors of the current node and put them in the open list
-        nays = finding_neighbors(current_node) #Finds the neighbors of the current node
+        nays = finding_neighbors(current_node.position, searchspace)
         # 2.4 Loop through all the neighbors of the current Node
         for node in nays:
             # 2.4.1 If not traversable or in the closed list
-            if closed_list.__contains__(node) or node.can_traverse == False:
+            if closed_list.__contains__(node) or node.traversable == False:
                 # Ignore it
                 continue
             # 2.4.2 If not in the open list
             if node not in open_list:
                 # add to the open list and calc h, g, f scores
                 open_list.append(node)
-            node.calc_g_score(current_node)
-            node.calc_h_score(goal_node)
-            node.calc_f_score()
+            node.calculate_g_score(current_node)
+            node.calculate_h_score(goal_node)
+            node.calculate_f_score()
             # 2.4.3 If it is in the open list
 
 def main():
@@ -70,5 +69,3 @@ def main():
     g = grid.nodes[38]
     p = algorithm(s, g, grid)
     a = 0
-
-main()
