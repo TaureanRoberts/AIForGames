@@ -10,6 +10,11 @@ class Node(object):
         self.parent = None
         self.can_traverse = True
 
+    #Prototype: def calc_g_score(self, node)
+    #Description: Calculates the g score of the nodes in the list
+    #PreCondition: Takes in a Vector2
+    #PostCondition: Gives a value due to the nodes position to the current node
+    #Protection Level: Public
     def calc_g_score(self, node):
         '''Calculates the g_score of the nodes in the graph and does tentative_g'''
         if self.position.x_pos == node.position.x_pos and self.position.y_pos == node.position.y_pos:
@@ -31,6 +36,11 @@ class Node(object):
                 self.parent = node
                 return
 
+    #Prototype: calc_h_score(self, node)
+    #Description: Calculates the h score or the heuristic for the node
+    #PreCondition: Takes the current nodes position and use manhattan distance to find the h score
+    #PostCondition: gives a the nodes a heuristic for calculation
+    #ProtectionLevel: global function
     def calc_h_score(self, node):
         self.h_score = (abs(self.position.x_pos - node.position.x_pos) + abs(self.position.y_pos - node.position.y_pos)) * 10
 
