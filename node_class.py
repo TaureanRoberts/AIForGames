@@ -44,6 +44,11 @@ class Node(object):
     def calc_h_score(self, node):
         self.h_score = (abs(self.position.x_pos - node.position.x_pos) + abs(self.position.y_pos - node.position.y_pos)) * 10
 
+    #Prototype:
+    #Description:
+    #PreCondition:
+    #PostCondition:
+    #ProtectionLevel:
     def calc_f_score(self):
         self.f_score = self.g_score + self.h_score
 
