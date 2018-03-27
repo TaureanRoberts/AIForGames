@@ -3,6 +3,12 @@ from vector2_class import Vector2
 from graph_class import Graph
 import math
 
+    #Prototype:
+    #Descripton:
+    #Arguements:
+    #PreCondition:
+    #PostCondition:
+    #Protection Level:
 def finding_neighbors(pos, search):
     nays = []
     nays.append(pos + Vector2(-1, 1)) #Top Left
@@ -20,6 +26,12 @@ def finding_neighbors(pos, search):
                 neighbors.append(node)
     return neighbors
 
+    #Prototype:
+    #Descripton:
+    #Arguements:
+    #PreCondition:
+    #PostCondition:
+    #Protection Level:
 def algorithm(start_node, goal_node, searchspace):
     open_list = []
     closed_list = []
@@ -59,6 +71,12 @@ def algorithm(start_node, goal_node, searchspace):
             node.calculate_f_score()
             # 2.4.3 If it is in the open list
 
+    #Prototype:
+    #Descripton:
+    #Arguements:
+    #PreCondition:
+    #PostCondition:
+    #Protection Level:
 def main():
     grid = Graph(Vector2(7, 7))
     grid.make_nodes()

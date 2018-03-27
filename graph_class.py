@@ -5,6 +5,12 @@ class Graph(object):
         self.nodes = []
         self.dimension = dims
 
+    #Prototype:
+    #Descripton:
+    #Arguements:
+    #PreCondition:
+    #PostCondition:
+    #Protection Level:
     def make_nodes(self):
         '''Make a search space for the nodes'''
         guid = 0
@@ -14,6 +20,12 @@ class Graph(object):
                 guid = guid + 1
                 self.nodes.append(_node)
 
+    #Prototype:
+    #Descripton:
+    #Arguements:
+    #PreCondition:
+    #PostCondition:
+    #Protection Level:
     def find_neighbors(self, guid):
         '''Finds the neighbors by getting their guid to give position'''
         top = guid - self.dimension.x_pos  # Top Node
@@ -31,6 +43,12 @@ class Graph(object):
                 neighbors.append(node)
         return neighbors
 
+    #Prototype:
+    #Descripton:
+    #Arguements:
+    #PreCondition:
+    #PostCondition:
+    #Protection Level:
     def get_neighbors(self, graph):
         '''Gets the position of neighbor by x and y positions'''
         positions = []
