@@ -12,7 +12,7 @@ class Node(object):
 
     #Prototype: def calc_g_score(self, node)
     #Description: Calculates the g score of the nodes in the list
-    #Arguements: 
+    #Arguements: uses self and takes a node as the arguement
     #PreCondition: Takes in a Vector2
     #PostCondition: Gives a value due to the nodes position to the current node
     #Protection Level: Public
@@ -39,7 +39,7 @@ class Node(object):
 
     #Prototype: calc_h_score(self, node)
     #Description: Calculates the h score or the heuristic for the node
-    #Arguements: 
+    #Arguements: uses self and  takes a node
     #PreCondition: Takes the current nodes position and use manhattan distance to find the h score
     #PostCondition: gives a the nodes a heuristic for calculation
     #ProtectionLevel: public
@@ -48,6 +48,7 @@ class Node(object):
 
     #Prototype: def calc_fscore(self)
     #Description: Combines the score of the g and h score to find the hscore
+    #Arguements: Takes in no arguements other than self
     #PreCondition: Add the results of the g and h scores
     #PostCondition: The total of the two scores gives the f score
     #ProtectionLevel: Public
@@ -56,10 +57,10 @@ class Node(object):
 
     #Prototype: def set_parent 
     #Descripton: Sets the parents of the nodes of the 
-    #Arguements:
-    #PreCondition:Takes a the nodes parents and assignes the 
-    #PostCondition: 
-    #Protection Level:
+    #Arguements: Uses self and Takes a node
+    #PreCondition: Checks the nodes and can trace the nodes to the start
+    #PostCondition: A list of nodes that allows traceing to the start
+    #Protection Level: Public
     def set_parent(self, node):
         '''Checks the nodes parents and can trace node to start'''
         self.parent = node
