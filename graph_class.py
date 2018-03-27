@@ -5,12 +5,12 @@ class Graph(object):
         self.nodes = []
         self.dimension = dims
 
-    #Prototype:
-    #Descripton:
-    #Arguements:
-    #PreCondition:
-    #PostCondition:
-    #Protection Level:
+    #Prototype: def make_nodes(self)
+    #Descripton: Populates the graph with nodes
+    #Arguements: Takes in a arguement of self
+    #PreCondition: takes the size of the grid
+    #PostCondition: Assigns each node a guid while the nodes are being made
+    #Protection Level: Public
     def make_nodes(self):
         '''Make a search space for the nodes'''
         guid = 0
@@ -20,12 +20,12 @@ class Graph(object):
                 guid = guid + 1
                 self.nodes.append(_node)
 
-    #Prototype:
-    #Descripton:
-    #Arguements:
-    #PreCondition:
-    #PostCondition:
-    #Protection Level:
+    #Prototype: def find_neighbors(self, guid)
+    #Descripton: Finds the neighbors
+    #Arguements: takes in a global unique identifier
+    #PreCondition: takes the current node/guid and puts it against the graph to move through
+    #PostCondition: Returns the list of guids that border the current node
+    #Protection Level: Public
     def find_neighbors(self, guid):
         '''Finds the neighbors by getting their guid to give position'''
         top = guid - self.dimension.x_pos  # Top Node
@@ -43,12 +43,12 @@ class Graph(object):
                 neighbors.append(node)
         return neighbors
 
-    #Prototype:
-    #Descripton:
-    #Arguements:
-    #PreCondition:
-    #PostCondition:
-    #Protection Level:
+    #Prototype: def get_neighbors(self, neighbors)
+    #Descripton: Gets the positon of neighbor by using vector coordinated
+    #Arguements: self and the arguement of a graph is used
+    #PreCondition: uses the current positions vectors and add/subtracts to get each corner
+    #PostCondition: gives the nodes a list of nodes that 
+    #Protection Level: Public
     def get_neighbors(self, graph):
         '''Gets the position of neighbor by x and y positions'''
         positions = []
