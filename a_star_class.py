@@ -5,7 +5,6 @@ import math
 
     #Prototype:
     #Descripton:
-    #Arguements:
     #PreCondition:
     #PostCondition:
     #Protection Level:
@@ -28,7 +27,6 @@ def finding_neighbors(pos, search):
 
     #Prototype:
     #Descripton:
-    #Arguements:
     #PreCondition:
     #PostCondition:
     #Protection Level:
@@ -73,7 +71,6 @@ def algorithm(start_node, goal_node, searchspace):
 
     #Prototype:
     #Descripton:
-    #Arguements:
     #PreCondition:
     #PostCondition:
     #Protection Level:

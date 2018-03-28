@@ -6,9 +6,8 @@ class Vector2(object):
 
     #Prototype: def __add__(self, other)
     #Descripton: overloads the addidion opperator
-    #Arguements: take an arguement of other
     #PreCondition: the node position and adds it to other
-    #PostCondition:  Returns sum of the two
+    #PostCondition:  Returns sum of the vector 
     #Protection Level: Public
     def __add__(self, other):
         '''Overloads the addition operator'''
@@ -17,9 +16,8 @@ class Vector2(object):
 
     #Prototype: def __sub__(self, other)
     #Descripton: Overloads the subtraction operators
-    #Arguements: takes in a arguement 
     #PreCondition: takes the position and subtracts it to a node
-    #PostCondition: Returns the new node into 
+    #PostCondition: Returns the new position
     #Protection Level: Public
     def __sub__(self, other):
         '''Overloads the subtraction funtions'''
@@ -28,8 +26,7 @@ class Vector2(object):
 
     #Prototype: def __mul__(self, other)
     #Descripton: scales the points of the vectors
-    #Arguements: Takes an arguement of other
-    #PreCondition: takes the current position and scales the values of the current node 
+    #PreCondition: takes the current position and scales the values of the current node
     #PostCondition: returns a scaled version of the current node
     #Protection Level: Public
     def __mul__(self, other):
@@ -39,9 +36,8 @@ class Vector2(object):
 
     #Prototype: def dot(self, other)
     #Descripton: Overloads the dot operator
-    #Arguements: Takes in an arguement of other
-    #PreCondition: takes in the current 
-    #PostCondition: returns the combined total
+    #PreCondition: takes in two positions
+    #PostCondition: returns the flow between two angles
     #Protection Level: Public
     def dot(self, other):
         '''Dot operator overloader'''
@@ -49,34 +45,31 @@ class Vector2(object):
         return spot
 
     #Prototype: def magnitude(self)
-    #Descripton: gets the
-    #Arguements:
-    #PreCondition:
-    #PostCondition:
-    #Protection Level:
+    #Descripton: gets the magnitude of the vector
+    #PreCondition: Use pyhagoras theorem with the current positions magnitude
+    #PostCondition: Returns the magnitude of the current position
+    #Protection Level: Public
     def magnitude(self):
         '''Gets the magnitude of the vector'''
         magn = math.sqrt(self.x_pos * self.x_pos + self.y_pos * self.y_pos)
         return magn
 
-    #Prototype:
-    #Descripton:
-    #Arguements:
-    #PreCondition:
-    #PostCondition:
-    #Protection Level:
+    #Prototype: def normalize(self)
+    #Descripton: Normalizes the magnitude of the Vector 
+    #PreCondition: Takes the current x and y and divides it against the magnitude of the current position
+    #PostCondition: Returns a vector with a normalized vector
+    #Protection Level: Public
     def normalize(self):
         '''Normalizes the magnitude of the vector'''
         mag = self.magnitude()
         norm = Vector2(self.x_pos / mag, self.y_pos / mag)
         return norm
 
-    #Prototype:
-    #Descripton:
-    #Arguements:
-    #PreCondition:
-    #PostCondition:
-    #Protection Level:
+    #Prototype: def __eq__(self, other)
+    #Descripton: Overloads the "Equals to" (==) operator
+    #PreCondition: Compares one position against "other's" positions
+    #PostCondition: Allows the comparison of two vectors 
+    #Protection Level: Public
     def __eq__(self, other):
         '''Overloads the == operator'''
         return (self.x_pos == other.x_pos and self.y_pos == other.y_pos)
