@@ -3,12 +3,13 @@ from vector2_class import Vector2
 from graph_class import Graph
 import math
 
-    #Prototype:
-    #Descripton:
-    #PreCondition:
-    #PostCondition:
-    #Protection Level:
+    #Prototype: def finding_neighbors(pos, search)
+    #Descripton: Finds the neighbors using vector position and uses a searchspace
+    #PreCondition: Uses a list of neighbors that are adjacent to the current position
+    #PostCondition: Returns the list of neighbors that meet the conditions.
+    #Protection Level: Public
 def finding_neighbors(pos, search):
+    '''Finds the neighbors using vector position and uses a searchspace'''
     nays = []
     nays.append(pos + Vector2(-1, 1)) #Top Left
     nays.append(pos + Vector2(0, 1)) #Top
@@ -25,7 +26,7 @@ def finding_neighbors(pos, search):
                 neighbors.append(node)
     return neighbors
 
-    #Prototype:
+    #Prototype: def algorithm(start_node, goal_node, searchspace)
     #Descripton:
     #PreCondition:
     #PostCondition:
