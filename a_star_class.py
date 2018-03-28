@@ -6,7 +6,7 @@ import math
     #Prototype: def finding_neighbors(pos, search)
     #Descripton: Finds the neighbors using vector position and uses a searchspace
     #PreCondition: Uses a list of neighbors that are adjacent to the current position
-    #PostCondition: Returns the list of neighbors that meet the conditions.
+    #PostCondition: Returns the list of neighbors that meet the conditions
     #Protection Level: Public
 def finding_neighbors(pos, search):
     '''Finds the neighbors using vector position and uses a searchspace'''
@@ -72,12 +72,9 @@ def algorithm(start_node, goal_node, searchspace):
             # 2.4.3 If it is in the open list
 
     #Prototype: def testing_astar()
-    #Descripton: Testing function where the astar testing is 
-
-
-    
-    #PreCondition:
-    #PostCondition: 
+    #Descripton: Testing function where the astar is being tested by my standards
+    #PreCondition: Uses a graph, start node, and goal node
+    #PostCondition: goes through the graph and nodes and uses the parents to go back to the start node
     #Protection Level: public
 def testing_astar():
     '''Algorithm testing'''

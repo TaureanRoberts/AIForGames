@@ -47,7 +47,7 @@ class Graph(object):
     #Descripton: Gets the positon of neighbor by using vector coordinated
     #Arguements: self and the arguement of a graph is used
     #PreCondition: uses the current positions vectors and add/subtracts to get each corner
-    #PostCondition: gives the nodes a list of nodes that 
+    #PostCondition: gives the nodes a new list that returns the nodes that meet the location that is specified
     #Protection Level: Public
     def get_neighbors(self, graph):
         '''Gets the position of neighbor by x and y positions'''
