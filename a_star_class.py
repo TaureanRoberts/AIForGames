@@ -27,11 +27,12 @@ def finding_neighbors(pos, search):
     return neighbors
 
     #Prototype: def algorithm(start_node, goal_node, searchspace)
-    #Descripton:
-    #PreCondition:
-    #PostCondition:
-    #Protection Level:
+    #Descripton: The core function for the a-star algorithm
+    #PreCondition: Takes in two lists, a open and closed list that take the nodes that are being traversed
+    #PostCondition: Returns the list nodes that are in in both lists that has been traversed
+    #Protection Level: Public
 def algorithm(start_node, goal_node, searchspace):
+    '''The a-star algorithm'''
     open_list = []
     closed_list = []
     current_node = start_node
@@ -70,12 +71,16 @@ def algorithm(start_node, goal_node, searchspace):
             node.calculate_f_score()
             # 2.4.3 If it is in the open list
 
-    #Prototype:
-    #Descripton:
+    #Prototype: def testing_astar()
+    #Descripton: Testing function where the astar testing is 
+
+
+    
     #PreCondition:
-    #PostCondition:
-    #Protection Level:
-def main():
+    #PostCondition: 
+    #Protection Level: public
+def testing_astar():
+    '''Algorithm testing'''
     grid = Graph(Vector2(7, 7))
     grid.make_nodes()
     grid.nodes[23].can_traverse = False
