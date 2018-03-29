@@ -4,8 +4,8 @@ class Node(object):
 
     #Prototype: def __init__(self, pos, _guid)
     #Description: Information that is needed for the nodes in the list
-    #Precondition: Takes in a node 
-    #PostCondition: 
+    #Precondition: Uses all the key things that are needed in a node
+    #PostCondition: The node is assigned a guid, position of a vector2, a g/h/f score, allows parents to be signed and if its a wall
     #ProtectionLevel: Public
     def __init__(self, pos, _guid):
         '''Information that nodes need to know'''
@@ -19,7 +19,7 @@ class Node(object):
 
     #Prototype: def calc_g_score(self, node)
     #Description: Calculates the g score of the nodes in the list
-    #PreCondition: Takes in a Vector2
+    #PreCondition: Takes in a Vector2 or position to 
     #PostCondition: Gives a value due to the nodes position to the current node
     #Protection Level: Public
     def calc_g_score(self, node):
