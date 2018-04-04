@@ -1,6 +1,5 @@
 import math
 class Vector2(object):
-    
     #Prototype: def __init__(self, rhs, lhs)
     #Description: Uses the vectors to give positions and size to be set and adjusted
     #PreCondition: Takes the takes the two axis
@@ -13,7 +12,7 @@ class Vector2(object):
     #Prototype: def __add__(self, other)
     #Descripton: overloads the addidion opperator
     #PreCondition: the node position and adds it to other
-    #PostCondition:  Returns sum of the vector 
+    #PostCondition:  Returns sum of the vector
     #Protection Level: Public
     def __add__(self, other):
         '''Overloads the addition operator'''
@@ -61,7 +60,7 @@ class Vector2(object):
         return magn
 
     #Prototype: def normalize(self)
-    #Descripton: Normalizes the magnitude of the Vector 
+    #Descripton: Normalizes the magnitude of the Vector
     #PreCondition: Takes the current x and y and divides it against the magnitude of the current position
     #PostCondition: Returns a vector with a normalized vector
     #Protection Level: Public
